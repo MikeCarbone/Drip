@@ -1,90 +1,159 @@
 <?php
-
-
-//  Template Name: Post Listing
-
-
+get_header();
 ?>
-    
-        <?php get_header(); ?>
- 
-    
-    
-
-<!--blog body-->
-
-<div id="Blog-post"> 
-  
-  <!-- banner Page
+    <!-- banner Page
     ==========================================-->
-  
-  <header class="entry-header" style="background-image: url(dist/img/s-1.jpg);">
-    <div class="content  wow fadeInUp">
-      <div class="container">
-        <h1><?php the_title();?></h1>
+
+    <div id="page-banner" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/img/s-1.jpg);">
+        <div class="content  wow fdeInUp" style="visibility: visible; animation-name: fdeInUp;">
+            <div class="container">
+                <h1>
+                    <?php the_title()?>
+                </h1>
+            </div>
+        </div>
     </div>
-  </header>
-  <div class="container">
-    <div class="row wow fadeInUp"> 
-      <!--blog posts container-->
-      <div class="col-md-10 col-sm-10 col-md-offset-1 single-post">
-        <article class="post">   
-          <?php foreach($categories as $category):?>
-                         
-              <p><?php echo $category->name; ?></p>
 
-          <?php endforeach; ?>
+    <!--page body-->
 
-          <figure ><img src="dist/img/count-bg.jpg" class="img-responsive">
-            <figcaption class="wp-caption-text">Cool image getting some <a title="Image Settings" href="http://en.support.wordpress.com/images/image-settings/">caption</a> love. </figcaption>
-          </figure>
-          <p> The value of Bitcoin has passed the symbolic $500 mark for the first time in a month, suggesting that the cryptocurrency is stabilizing after a rollercoaster six months.</p>
-          <p> With the first generation of Bitcoin businesses like Mt. Gox less influential today, the hopes of ‘mass-marketizing’ virtual currencies are held by venture capital-backed companies like BitPay, which recently raised $30 million, Coinbase, which raised a $25 million Series B round last year, and Circle. Interestingly, it looks like a significant transaction took the cyber currency over today’s landmark. That’s a reminder that though many people see the future of Bitcoin as leveling the playing field for all, there are still individuals with vast amounts. </p>
-          <h2>Heading two</h2>
-          <p> Donut cake carrot cake toffee tootsie roll halvah muffin tiramisu icing. Danish pie liquorice candy dessert soufflé. Pudding halvah jelly-o gingerbread sweet roll candy canes donut. I love topping lemon drops wafer chocolate candy chupa chups I love icing. Biscuit pudding brownie danish macaroon soufflé candy. </p>
-          <h3>Heading three</h3>
-          <p> Donut cake carrot cake toffee tootsie roll halvah muffin tiramisu icing. Danish pie liquorice candy dessert soufflé. Pudding halvah jelly-o gingerbread sweet roll candy canes donut. I love topping lemon drops wafer chocolate candy chupa chups I love icing. Biscuit pudding brownie danish macaroon soufflé candy. </p>
-          <h4>Heading four</h4>
-          <p> Donut cake carrot cake toffee tootsie roll halvah muffin tiramisu icing. Danish pie liquorice candy dessert soufflé. Pudding halvah jelly-o gingerbread sweet roll candy canes donut. I love topping lemon drops wafer chocolate candy chupa chups I love icing. Biscuit pudding brownie danish macaroon soufflé candy. </p>
-          <h5>Heading five</h5>
-          <p> Donut cake carrot cake toffee tootsie roll halvah muffin tiramisu icing. Danish pie liquorice candy dessert soufflé. Pudding halvah jelly-o gingerbread sweet roll candy canes donut. I love topping lemon drops wafer chocolate candy chupa chups I love icing. Biscuit pudding brownie danish macaroon soufflé candy. </p>
-          <h6>Heading six</h6>
-          <p> Donut cake carrot cake toffee tootsie roll halvah muffin tiramisu icing. Danish pie liquorice candy dessert soufflé. Pudding halvah jelly-o gingerbread sweet roll candy canes donut. I love topping lemon drops wafer chocolate candy chupa chups I love icing. Biscuit pudding brownie danish macaroon soufflé candy. </p>
-          <h4>Paragraph Italics</h4>
-          <p> <i>Donut cake carrot cake toffee tootsie roll halvah muffin tiramisu icing. Danish pie liquorice candy dessert soufflé. Pudding halvah jelly-o gingerbread sweet roll candy canes donut. I love topping lemon drops wafer chocolate candy chupa chups I love icing. Biscuit pudding brownie danish macaroon soufflé candy.</i> </p>
-          <h4>UL Lists</h4>
-          <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. </p>
-          <ul>
-            <li>Curabitur mollis sodales nibh a dapibus.</li>
-            <li>Curabitur mollis .</li>
-            <li>Curabitur mollis sodales nibh a dapibus.</li>
-            <li>Curabitur mollis sodales nib.</li>
-            <li>Curabitur mollis sodales nibh a dapibus.</li>
-          </ul>
-          <h4>OL Lists</h4>
-          <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. </p>
-          <ol>
-            <li>Curabitur mollis sodales nibh a dapibus.</li>
-            <li>Curabitur mollis .</li>
-            <li>Curabitur mollis sodales nibh a dapibus.</li>
-            <li>Curabitur mollis sodales nib.</li>
-            <li>Curabitur mollis sodales nibh a dapibus.</li>
-          </ol>
-          <blockquote>
-            <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.</p>
-          </blockquote>
-          
-      
-          
-        </article>
-		<br>
-        <div class="clearfix"></div>
-      </div>
-      <!--blog posts container-->
-      
-      <div class="clearfix"></div>
+    <div id="page-body">
+        <div class="container">
+            <?php if (have_posts()): ?>
+            <?php // TO SHOW THE PAGE CONTENTS?>
+            <?php while (have_posts()) : the_post(); ?>
+              <?php $categories = get_categories();
+?>
+            <!--Because the_content() works only inside a WP Loop -->
+            <div class="row  wow fdeInUp">
+
+                <!--Image block-->
+                <div class="col-md-6 col-sm-12">
+                    <figure>
+                        <?php the_post_thumbnail('full', ['class' => 'img-responsive']);?>
+                    </figure>
+                </div>
+                <!--/Image block-->
+
+                <!--content block-->
+                <div class="col-md-6 col-sm-12 page-block ">
+
+                    <header class="entry-header">
+                        <span>
+                      <?php foreach ($categories as $key => $category): ?>    
+                        <a href="<?php echo get_category_link($category); ?>"><?php echo $category->name;?> </a> 
+                      <?php endforeach; ?>
+</span>
+                        <h2>
+                            <?php the_title(); ?>
+                        </h2>
+                        <ul class=" custom-social">
+                            <li>Share :</li>
+                            <li> <a href="mailto:someone@example.com?"><i class="fa fa-facebook"></i></a></li>
+                            <li> <a href="mailto:someone@example.com?"><i class="fa fa-rss"></i></a></li>
+                            <li> <a href="mailto:someone@example.com?"><i class="fa fa-twitter"></i></a></li>
+                            <li> <a href="mailto:someone@example.com?"><i class="fa fa-linkedin-square"></i></a></li>
+                            <li> <a href="mailto:someone@example.com?"><i class="fa fa-vimeo-square"></i></a></li>
+                        </ul>
+                        <?php the_content(); ?>
+
+                    </header>
+
+
+                </div>
+                <!--/content block-->
+                <div class="clearfix"></div>
+
+                <!--Portfolio nav-->
+                <nav class="navigation posts-navigation" role="navigation">
+                    <ul>
+                        <li class="pull-left">
+                            <div class="nav-previous"><a href="http://localhost/wordpress/page/2/"><i class="fa fa-chevron-left"></i> Previous </a></div>
+                        </li>
+
+                        <li><a href="portfolio.html"><i class="fa fa-th-large"></i>Back to Portfolio</a></li>
+
+                        <li class="pull-right">
+                            <div class="nav-next"><a href="http://localhost/wordpress/page/2/">Next  <i class="fa fa-chevron-right"></i></a></div>
+                        </li>
+                    </ul>
+                </nav>
+                <!--/Portfolio nav-->
+
+            </div>
+
+
+            <?php endwhile; //resetting the page loop?>
+            <?php wp_reset_query(); //resetting the page query?>
+            <?php else: ?>
+            <h2>Sorry, No Post Found</h2>
+            <?php endif; ?>
+
+        </div>
     </div>
-  </div>
-</div>
+    <!--/page body-->
+    <div class="clearfix"></div>
 
-<?php get_footer(); ?>
+
+    <!-- our works block
+    ==========================================-->
+    <section id="our-work-block">
+        <div class="container">
+            <div class="row">
+                <!--section-title-->
+                <div class="section-title text-center wow fadeInUp">
+                    <h4>Realated Projects</h4>
+
+                </div>
+                <!--/section-title-->
+                <div class="clearfix"></div>
+                <div class="works">
+                    <ul class="grid">
+                        <li>
+                            <figure><img src="dist/img/01-screenshot.jpg" alt="Screenshot 01">
+                                <figcaption>
+                                    <div class="caption-content">
+                                        <h6>Codetowp branding</h6>
+                                        <a href="#">Design</a> <a href="#">brand</a>
+                                        <ul class="work-more">
+                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure><img src="dist/img/02-screenshot.jpg" alt="Screenshot 01">
+                                <figcaption>
+                                    <div class="caption-content">
+                                        <h6>Optimised For Design</h6>
+                                        <a href="#">Design</a> <a href="#">brand</a>
+                                        <ul class="work-more">
+                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure><img src="dist/img/03-screenshot.jpg" alt="Screenshot 01">
+                                <figcaption>
+                                    <div class="caption-content">
+                                        <h6>Optimised For Design</h6>
+                                        <a href="#">Design</a> <a href="#">brand</a>
+                                        <ul class="work-more">
+                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <?php get_footer(); ?>

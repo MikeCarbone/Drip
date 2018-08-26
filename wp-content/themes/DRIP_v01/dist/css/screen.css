@@ -64,7 +64,7 @@ input:focus{
 	padding: 0 25px;
 }
 
-.me-menu{
+.menu{
 	background-color: black;
 	display: block;
 	height: 100vh;
@@ -108,33 +108,46 @@ input:focus{
 	animation: menu-slide-out .25s ease-in forwards;
 }
 
-#menu-test-menu{
+.menu__list{
 	align-items: center;
 	display: none;
 	flex-direction: column;
 	height: 60vh;
 	margin: 50px auto;
-	opacity: 0;
+	opacity: 1;
 	text-align: center;
 	transition: .25s all ease-in-out;
 }
 
-.menu-item{
-	color: #DEDEDE;
+.menu__list-item{
 	flex: 1;
 	font-size: 2rem;
 	display: block;
-	width: 100vw;
+	width: 100%;
+}
+
+.menu__list-item a{
+	color: #DEDEDE;
+}
+
+.menu__list-item a:hover{
+	color: #FFFFFF;
 	transition: .25s all ease-in-out;
 }
 
-.menu-item a{
-	color: #DEDEDE;
-	flex: 1;
-	font-size: 2rem;
-	display: block;
-	width: 100vw;
+.menu__list:hover .menu__list-item a{
+	color: #3F3F3F;
 	transition: .25s all ease-in-out;
+}
+
+.menu__list .menu__list-item:hover a{
+	color: #FFFFFF;
+	transition: .25s all ease-in-out;
+}
+
+
+.menu-test-menu-container{
+	opacity: 0;;
 }
 
 .menu__list-link{
@@ -257,7 +270,7 @@ input:focus{
 
 .hero__img{
 	background-color: black;
-	height: 680px;
+	height: 712px;
 	min-height: 600px;
 	object-fit: cover;
 	object-position: top;
@@ -276,7 +289,7 @@ input:focus{
 	background: -ms-linear-gradient(top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.02) 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.75) 100%);
 	background: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.02) 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.75) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
-	height: 680px;
+	height: 712px;
 	min-height: 600px;
 	opacity: 1;
 	position: absolute;
@@ -448,6 +461,7 @@ input:focus{
 
 .article-listing__info{
 	margin: 0 0 0 0;
+	width: 60%;
 }
 
 .article-listing__title{

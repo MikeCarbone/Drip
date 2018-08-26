@@ -29,3 +29,22 @@ function load_theme_assets(){
 	wp_enqueue_script('fancy', get_template_directory_uri() . '/dist/js/fancy.js');
 }
 add_action('wp_enqueue_scripts', 'load_theme_assets');
+
+//For menu in header file, adds custom class to <li>s
+function atg_menu_classes($classes, $item, $args) {
+   
+    $classes[] = 'menu__list-item';
+    
+    return $classes;
+  }
+  add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
+
+function register_widgets()
+{
+    register_sidebar([
+        'name'          => 'Blog Sidebar',
+        'id'            => 'sidebar',
+    ]);
+}
+
+add_action('widgets_init', 'register_widgets');

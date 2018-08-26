@@ -16,5 +16,6 @@
 
       <h4 class="footer__copy">&copy; DRIP Media 2018. All Rights Reserved.</h4>
 </section>
+<?php wp_footer(); ?> 
 </body>
 </html>

@@ -1,6 +1,6 @@
 function execute(){
 	const menuButton = document.getElementById("menu-js");
-	const menu = document.getElementsByClassName("me-menu")[0];
+	const menu = document.getElementsByClassName("menu")[0];
 	const closeButton = document.getElementsByClassName("menu__close-button")[0];
 	const menuChildren = menu.children;
 	const searchEl = document.getElementsByClassName('search__icon')[0];
@@ -17,13 +17,15 @@ function execute(){
 			//Actions when the mobile nav is OPEN
 			menu.classList.remove('menu-slide-out');
 			menu.classList.add('menu-slide-in');
-	
+			
 			for (let i = 0; i < menuChildren.length; i++){
 				menuChildren[i].style.display = 'block';
 				menuChildren[i].classList.remove('fadeOut');
 				menuChildren[i].classList.add('fadeIn');
 			}
 			document.getElementById('menu-test-menu').style.display = 'flex';
+			document.getElementById('menu-test-menu').classList.add('fadeIn');
+
 			
 			isMenuOpen = true;
 		}else{
@@ -44,7 +46,7 @@ function execute(){
 	const searchButton = document.getElementsByClassName('search__button')[0];
 	let isSearchOpen = false;
 	function searchMove(){
-		console.log('Move shit');
+		console.log('Menu activated');
 	
 		if (!isSearchOpen){
 		

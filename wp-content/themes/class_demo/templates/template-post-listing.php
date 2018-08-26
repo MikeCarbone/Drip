@@ -6,6 +6,7 @@
  *
  * @link https://codex.wordpress.org/Class_Reference/WP_Query
 */
+
 $arg = [
   'post_type'     => 'post',
   'post_status'   => 'publish',
@@ -20,7 +21,7 @@ get_header(); ?>
     ==========================================-->
 
   <header class="entry-header" style="background-image: url(<?php echo get_template_directory_uri();?>/dist/img/s-1.jpg);">
-    <div class="content wow fadeInUp">
+    <div class="content  wow fadeInUp">
       <div class="container">
         <h1>
           <?php the_title();?>
@@ -40,39 +41,38 @@ get_header(); ?>
               <article class="col-md-12 wow fadeInUp">
                 <header class="entry-header">
                   <span class="date-article">
-                    <i class="fa fa-calendar-o"></i><?php the_date('F j, Y'); ?></span>
+                    <i class="fa fa-calendar-o"></i><?php the_date();?></span>
                   <a href="<?php the_permalink(); ?>">
-
-                    <?php
-                        if(has_post_thumbnail()) : ?>
-                          <?php the_post_thumbnail(); ?>
-                        <?php else: ?>
-                        <img src="https://placehold.it/1280x720">
-
-                    <?php endif; ?>
-                   
+                  <?php
+                  // Check to see if the post has a featured image
+                  if (has_post_thumbnail()): ?>
+                    <?php the_post_thumbnail();?>
+                  <?php else: ?>
+                    <img src="https://placehold.it/1280x720" alt="">
+                  <?php endif; ?>
                   </a>
                   <span class="byline">
                     <span class="author vcard">
-
                       <?php 
-                          $categories = get_the_category();
-                      ?>
-                       <p>
-                         <i class="fa fa-folder-o"></i>
-                          <?php foreach($categories as $category):?>
-                         
-                            <a href="<?php echo_get_category_link($category); ?>"><?php echo $category->name; ?>
-                            </a>
-
+                        // Get categories associated with this post
+                        $categories = get_the_category();
+                        ?>
+                        <p>
+                          <i class="fa fa-folder-o"></i>
+                          <?php foreach ($categories as $category): ?>
+                            <a href="<?php echo get_category_link($category); ?>"><?php echo $category->name ?></a>
                           <?php endforeach; ?>
                         </p>
+                        
+                      <a href="<?php the_permalink(); ?>">
+                        <i class="fa fa-user-o"></i> Rijo</a>
                     </span>
                   </span>
-                    
+                  <a href="<?php the_permalink(); ?>">
+                    <h2><?php the_title()?></h2>
+                  </a>
                 </header>
-                <p>Nullam consequat sed purus ut laoreet. Etiam fringilla placerat magna a aliquam. Mauris mollis tristique. In
-                  ac interdum ipsum. Phasellus in accumsan metus.</p>
+                <p><?php the_excerpt(); ?></p>
                 <a class="btn  readmore-btn" href="#">READ MORE</a>
               </article>
               <!--/article-->

@@ -23,21 +23,21 @@ add_action('init', 'register_menus');
 
 function load_theme_assets(){
 	//name, where the file is located, 
-	wp_enqueue_style('screen', get_template_directory_uri() . '/dist/css/screen.css');
-	wp_enqueue_style('normalize', get_template_directory_uri() . '/dist/css/normalize.css');
+	wp_enqueue_style('screen', get_template_directory_uri() . '/dist/css/screen.css', array(), null);
+	// wp_enqueue_style('normalize', get_template_directory_uri() . '/dist/css/normalize.css');
 
 	wp_enqueue_script('fancy', get_template_directory_uri() . '/dist/js/fancy.js');
 }
 add_action('wp_enqueue_scripts', 'load_theme_assets');
 
 //For menu in header file, adds custom class to <li>s
-function atg_menu_classes($classes, $item, $args) {
-   
+function mc_menu_classes($classes, $item, $args) {
+    
     $classes[] = 'menu__list-item';
     
     return $classes;
   }
-  add_filter('nav_menu_css_class', 'atg_menu_classes', 1, 3);
+add_filter( 'nav_menu_css_class', 'mc_menu_classes', 10, 4);
 
 function register_widgets()
 {
@@ -48,3 +48,10 @@ function register_widgets()
 }
 
 add_action('widgets_init', 'register_widgets');
+
+
+add_theme_support('post-thumbnails', array(
+'post',
+'page',
+'custom-post-type-name',
+));

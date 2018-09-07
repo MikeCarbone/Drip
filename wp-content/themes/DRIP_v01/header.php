@@ -5,32 +5,30 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+
   <?php wp_head(); ?>
 
 </head>
 <body <?php body_class(); ?>>
 <?php
-    if(!is_home()){
-      $header_class = '--dark';
-    } else {
+    if(is_home()){
       $header_class = '';
+    } else {
+      $header_class = '--not-home';
     }
 
 ?>
   <header class="flex header header<?php echo $header_class; ?>">
-    <h1 class="header__logo header__logo<?php echo $header_class; ?>">DRIP</h1>
+    <h1 class="header__logo header__logo<?php echo $header_class; ?>"><a class="header__logo-link<?php echo $header_class; ?>" href="<?php echo home_url(); ?>">DRIP</a></h1>
     <nav class="nav flex">
-      <div id="menu-js">
-        <div class="menu__icon"></div>
-      </div>
-      <div class="search flex">
-        <div class="search__icon search__icon<?php echo $header_class; ?>">
-          <div></div>
+      <div class="menu-js<?php echo $header_class; ?>" id="menu-js">
+        <div class="menu__icon">
+          <svg aria-hidden="true" class="svg-inline--fa fa-align-right fa-w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M160 84V44c0-8.837 7.163-16 16-16h256c8.837 0 16 7.163 16 16v40c0 8.837-7.163 16-16 16H176c-8.837 0-16-7.163-16-16zM16 228h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 256h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm160-128h256c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H176c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
         </div>
-        <input class="search__input search__input<?php echo $header_class; ?>" type="text" name="search" placeholder="Search...">
-        <button class="search__button search__button<?php echo $header_class; ?>">Search</button>
       </div>
+      
+        <?php get_search_form(); ?>
 
     </nav>
     <div class="menu">

@@ -33,7 +33,7 @@ input:focus{
 	justify-content: space-between;
 }
 
-.header--dark{
+.header--not-home{
 	background-color: #F1F1F1;
 }
 
@@ -42,7 +42,15 @@ input:focus{
 	margin: 5px 10vw;
 }
 
-.header__logo--dark{
+.header__logo-link{
+	color: white;
+}
+
+.header__logo-link--not-home{
+	color: black;
+}
+
+.header__logo--not-home{
 	color: black;
 }
 
@@ -66,7 +74,7 @@ input:focus{
 
 .menu{
 	background-color: black;
-	display: block;
+	display: none;
 	height: 100vh;
 	position: fixed;
 	width: 0;
@@ -74,11 +82,11 @@ input:focus{
 }
 
 .menu__header{
-	display: none;
+	/*display: none;*/
 	font-size: 5rem;
 	height: initial;
 	margin: 20px auto;
-	opacity: 0;
+	/*opacity: 0;*/
 	padding: 15px;
 	text-align: center;
 	width: 50%;
@@ -86,8 +94,8 @@ input:focus{
 
 .menu__close-button{
 	cursor: pointer;
-	display: none;
-	opacity: 0;
+	/*display: none;*/
+	/*opacity: 0;*/
 	/*padding: 25px;*/
 	position: absolute;
 	top: 15px;
@@ -95,9 +103,29 @@ input:focus{
 }
 
 #menu-js{
-	background-color: red;
-	height: 20px;
-	width: 20px;
+	/*background-color: red;*/
+	cursor: pointer;
+	height: 26px;
+	margin: 0 25px;
+	stroke: transparent;
+	stroke-width: 1px;
+	width: 26px;
+	transition: .2s ease-in-out all;
+}
+
+.menu-js--not-home{
+	color: black;
+}
+
+.svg-inline--fa{
+	transition: .2s ease-in-out all;
+}
+
+.svg-inline--fa:hover{
+	color: transparent;
+	stroke: white;
+	stroke-width: 15px;
+	transition: .2s ease-in-out all;
 }
 
 .menu-slide-in{
@@ -108,14 +136,53 @@ input:focus{
 	animation: menu-slide-out .25s ease-in forwards;
 }
 
+
+
 .menu__list{
 	align-items: center;
-	display: none;
+	/*display: none;*/
 	flex-direction: column;
 	height: 60vh;
 	margin: 50px auto;
 	opacity: 1;
 	text-align: center;
+	transition: .25s all ease-in-out;
+}
+
+.menu__list ul{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 60vh;
+	margin: 50px auto;
+	opacity: 1;
+	text-align: center;
+	transition: .25s all ease-in-out;
+}
+
+.menu__list ul li{
+	flex: 1;
+	font-size: 2rem;
+	display: block;
+	width: 100%;
+}
+
+.menu__list ul li a{
+	color: #DEDEDE;
+}
+
+.menu__list ul li a:hover{
+	color: #FFFFFF;
+	transition: .25s all ease-in-out;
+}
+
+.menu__list:hover li a{
+	color: #3F3F3F;
+	transition: .25s all ease-in-out;
+}
+
+.menu__list li:hover a{
+	color: #FFFFFF;
 	transition: .25s all ease-in-out;
 }
 
@@ -147,7 +214,7 @@ input:focus{
 
 
 .menu-test-menu-container{
-	opacity: 0;;
+	/*opacity: 0;;*/
 }
 
 .menu__list-link{
@@ -197,21 +264,25 @@ input:focus{
 
 .search{
 	margin: 0 20px 0 0;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 .search__icon{
-	background-color: blue;
-	height: 25px;
-	width: 25px;
+	height: 26px;
+	width: 26px;
+	overflow: hidden;
+}
+
+.search__icon--not-home{
+	color: black;
 }
 
 .search__input{
 	background-color: transparent;
 	color: grey;
 	font-size: 1.4rem;
-	margin: 0 15px 0 0;
-	padding: 15px;
+	margin: 0 15px;
+	/*padding: 15px;*/
 	width: 0;
 }
 
@@ -224,8 +295,8 @@ input:focus{
 	border: 5px solid #B31A12;
 }
 
-.search__input--dark:focus{
-	color: black;
+.search__input--not-home:focus{
+	color: white;
 	transition: all .2s ease-in-out;
 }
 
@@ -250,8 +321,8 @@ input:focus{
 	align-items: flex-end;
 	background-color: transparent;
 	color: white;
-	height: 600px;
-	min-height: 600px;
+	height: 568px;
+	/*min-height: 600px;*/
 }
 
 .hero__caption-zone{
@@ -270,7 +341,8 @@ input:focus{
 
 .hero__img{
 	background-color: black;
-	height: 712px;
+	height: 680px;
+	left: 0;
 	min-height: 600px;
 	object-fit: cover;
 	object-position: top;
@@ -289,7 +361,8 @@ input:focus{
 	background: -ms-linear-gradient(top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.02) 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.75) 100%);
 	background: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.02) 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.75) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
-	height: 712px;
+	height: 680px;
+	left: 0;
 	min-height: 600px;
 	opacity: 1;
 	position: absolute;
@@ -382,7 +455,7 @@ input:focus{
 	background: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.02) 49%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.75) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
 	height: 400px;
-	margin-top: -404px;
+	margin-top: -405px;
 	opacity: 1;
 	position: relative;
 	z-index: -999;
@@ -487,11 +560,36 @@ input:focus{
 	height: 145px;
 	/*margin: -200px 20% 0 80%;*/
 	object-fit: cover;
-	object-position: top;
+	object-position: center;
 	overflow: hidden;
 	position: relative;
 	/*transform: translateY(-20px);*/
 	width: 30%;
+}
+
+.two .widget{
+	list-style-type: none;
+	margin: 30px 0;
+}
+
+.widgettitle{
+	border-left: 1px solid #B31A12;
+	font-size: 1.5rem;
+	padding: 10px 15px;
+}
+
+.widget ul li{
+	list-style-type: none;
+}
+
+.widget ul li::before{
+	color: #B31A12;
+	content: "\25AA";
+	display: inline-block;
+	font-size: 1.8em;
+	/*margin: -10px 0 0 -10px;*/
+	width: .7em;
+	vertical-align: -14%;
 }
 
 .sidebar{
@@ -652,8 +750,9 @@ input:focus{
 .footer{
 	background-color: black;
 	color: white;
-	height: 600px;
+	/*height: 600px;*/
 	margin: 0;
+	padding: 0 0 100px 0;
 }
 
 .footer__header{
@@ -669,6 +768,21 @@ input:focus{
 	margin: 50px auto;
 	max-width: 350px;
 	text-align: center;
+}
+
+.footer__lists ul li{
+	margin: 30px 0;
+	list-style-type: none;
+}
+
+.footer__lists ul li a{
+	color: #DEDEDE;
+	transition: all .2s ease-in-out;
+}
+
+.footer__lists ul li a:hover{
+	color: #FFFFFF;
+	transition: all .2s ease-in-out;
 }
 
 .footer__list-item{
@@ -759,6 +873,7 @@ input:focus{
 	justify-content: center;
 	/*max-width: 800px;*/
 	margin: 0 auto;
+	overflow-x: hidden;
 	/*width: 75%;*/
 }
 
@@ -773,9 +888,10 @@ input:focus{
 
 .article__img{
 	height: 400px;
-	margin: 0px 0 0 0;
+	margin: 0px auto;
 	object-fit: cover;
-	object-position: top;
+	object-position: center;
+	width: 100vw;
 }
 
 /*.article h1, h2, h3, h4, h5, h6{
@@ -946,7 +1062,7 @@ input:focus{
 
 .search-term{
 	color: #B31A12;
-	margin: -15px auto 30px auto;
+	margin: 15px auto 30px auto;
 	text-align: center;
 }
 
@@ -1003,6 +1119,10 @@ input:focus{
 	}
 
 	.sidebar{
+		display: none;
+	}
+
+	.two > div:not(.trending) {
 		display: none;
 	}
 

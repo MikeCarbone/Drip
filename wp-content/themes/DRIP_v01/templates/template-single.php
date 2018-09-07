@@ -1,4 +1,5 @@
 <?php
+
 get_header();
 ?>
     <!-- banner Page
@@ -28,18 +29,32 @@ get_header();
                     <div class="next">
                         <h4 class="next__header article__h4 article__header">Enjoyed the article? Check these out:</h2>
                         <div class="threesome flex">
-                            <a href="#" class="suggested-article flex">
-                                <img class="suggested-article__img"  src="img/2guysNoCountry.jpg">
-                                <h3 class="suggested-article__title">These guys rock and are really cool and you should really look at these</h3>
-                            </a>
-                            <a href="#" class="suggested-article flex">
-                                <img class="suggested-article__img"  src="img/2guysNoCountry.jpg">
-                                <h3>These guys rock</h3>
-                            </a>
-                            <a href="#" class="suggested-article flex">
-                                <img class="suggested-article__img"  src="img/2guysNoCountry.jpg">
-                                <h3>These guys rock</h3>
-                            </a>
+                            <?php
+                                $arg = [
+                                  'post_type'     => 'post',
+                                  'post_status'   => 'publish',
+                                  'posts_per_page'=> 3
+                                ];
+                                $posts = new WP_Query($arg);
+
+                            ?>
+                            <?php if ($posts->have_posts()) : ?>
+                                <?php while ($posts->have_posts()) : $posts->the_post(); ?>
+                                    <a href="<?php the_permalink(); ?>" class="suggested-article flex">
+                                        <?php if (has_post_thumbnail()): ?>
+                                            <?php the_post_thumbnail('thumbnail', array('class' => 'suggested-article__img'));?>
+                                        <?php else: ?>
+                                            <img class="hero__img" src="https://placehold.it/1280x720" alt="">
+                                        <?php endif; ?>
+                                        <h3 class="suggested-article__title"><?php the_title(); ?></h3>
+                                    </a>
+                            <?php endwhile; ?>
+                            <?php wp_reset_postdata(); ?>
+                            <?php else : ?>
+                              <p>
+                                <?php echo 'Sorry, no posts matched your criteria.'; ?>
+                              </p>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
